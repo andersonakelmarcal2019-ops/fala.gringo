@@ -1,45 +1,414 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inglês Real | Apenas 7 Dias</title>
-    <!-- Preconnect to speed up DNS/TCP for fonts and external modules -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="pt-BR">
+    <meta name="google" content="notranslate">
+    <title>Fala Gringo - Aprenda Inglês</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.tailwindcss.com">
-    <link rel="preconnect" href="https://esm.sh">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 
-    <!-- Non-blocking font loading -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript>
-      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
-    </noscript>
+    <!-- UTMify Pixel -->
+    <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck
+        data-utmify-prevent-subids async defer></script>
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        window.pixelId = "695a9a8b5e67593549d5f31f";
+        var a = document.createElement("script");
+        a.setAttribute("async", "");
+        a.setAttribute("defer", "");
+        a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+        document.head.appendChild(a);
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var dateEl = document.getElementById('urgency-date');
+            if (dateEl) {
+                var now = new Date();
+                var day = now.getDate();
+                var month = now.getMonth() + 1;
+                var year = now.getFullYear();
+                dateEl.textContent = day + '/' + month + '/' + year;
+            }
+        });
+    </script>
+    <script>
+        (function () {
+            var names = ["Letícia", "Maria", "Ana", "Juliana", "Fernanda", "Camila", "Beatriz", "Larissa", "Amanda", "Gabriela", "Mariana", "Carolina", "Rafaela", "Patrícia", "Bruna", "Lucas", "Pedro", "João", "Gabriel", "Rafael", "Bruno", "Carlos", "Matheus", "Felipe", "Gustavo", "Ricardo", "André", "Marcelo", "Thiago", "Leonardo"];
+            var productName = "Fala Gringo - Aprenda Inglês";
+            var interval = 12 * 1000;
+            function getRandomName() { return names[Math.floor(Math.random() * names.length)]; }
+            function showNotification() {
+                var existing = document.getElementById('fake-purchase-notification');
+                if (existing) existing.remove();
+                var notification = document.createElement('div');
+                notification.id = 'fake-purchase-notification';
+                notification.innerHTML = '<div style="width:40px;height:40px;border-radius:50%;background-color:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:18px;">✓</div><div><div style="font-weight:600;font-size:14px;">' + getRandomName() + ' acabou de comprar</div><div style="font-size:12px;opacity:0.8;">' + productName + '</div></div>';
+                notification.style.cssText = 'position:fixed;bottom:20px;left:20px;background-color:#22c55e;color:#ffffff;padding:12px 20px;border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,0.3);z-index:9998;display:flex;align-items:center;gap:12px;animation:slideInLeft 0.4s ease-out;max-width:300px;';
+                document.body.appendChild(notification);
+                setTimeout(function () { if (notification.parentNode) notification.remove(); }, 4000);
+            }
+            setTimeout(showNotification, 3000);
+            setInterval(showNotification, interval);
+        })();
+    </script>
     <style>
-      body{font-family:'Inter',sans-serif;scroll-behavior:smooth;background-color:#fff;color:#1e293b;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;margin:0}
-      .gradient-text{background:linear-gradient(90deg,#0ea5e9,#6366f1);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-      .glass{background:rgba(255,255,255,.8);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(0,0,0,.05);box-shadow:0 10px 40px -10px rgba(0,0,0,.05)}
-      .cta-shadow{box-shadow:0 20px 25px -5px rgba(249,115,22,.3)}
-      img{content-visibility:auto;max-width:100%;height:auto}
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: clip;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            min-height: 100vh;
+            overflow-x: clip;
+            width: 100%;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            width: 100%;
+        }
+
+        .content> :not(.section) {
+            margin-bottom: 16px;
+        }
+
+        .section {
+            position: relative;
+            width: calc(100% + 40px);
+            margin-left: -20px;
+            margin-right: -20px;
+            padding: 40px 20px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulseBtn {
+
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+            }
+
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            }
+        }
+
+        h2 {
+            font-size: 28px;
+            font-weight: 700;
+            text-align: center;
+            color: #1a1a1a;
+        }
+
+        p {
+            color: #4a4a4a;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        /* Carousel Styles */
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 12px;
+            padding: 10px 0;
+            -webkit-overflow-scrolling: touch;
+            /* smooth scrolling on iOS */
+        }
+
+        .carousel::-webkit-scrollbar {
+            display: none;
+            /* Hide scrollbar */
+        }
+
+        .carousel img {
+            width: 85%;
+            /* Shows part of the next slide to encourage scrolling */
+            flex-shrink: 0;
+            border-radius: 8px;
+            scroll-snap-align: center;
+        }
+
+        /* FAQ Accordion */
+        .faq-item {
+            margin-bottom: 10px;
+            border-radius: 8px;
+            background: #f8f8f8;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 15px;
+            cursor: pointer;
+            font-weight: 700;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #000000;
+            font-size: 16px;
+        }
+
+        .faq-question::after {
+            content: '▼';
+            font-size: 12px;
+            color: #22c55e;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 15px;
+            color: #4a4a4a;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding-bottom: 15px;
+        }
     </style>
-    <script type="importmap">
-{
-  "imports": {
-    "framer-motion": "https://esm.sh/framer-motion@^12.23.26",
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom": "https://esm.sh/react-dom@^19.2.3",
-    "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/"
-  }
-}
-</script>
-  <link rel="stylesheet" href="/index.css">
 </head>
-  <body>
-    <div id="root"></div>
-  <script type="module" src="/index.tsx"></script>
+
+<body>
+    <div class="container">
+        <!-- Barra de Urgência -->
+        <div
+            style="margin: -20px -20px 0; background-color:#f60404; color:#ffffff; padding:10px 20px; text-align:center; font-weight:600; font-size:14px; display:flex; justify-content:center; align-items:center; gap:8px;">
+            <span>⚡ Desconto só <span style="color:#ffff00;font-weight:700">HOJE</span> nessa página <span
+                    id="urgency-date" style="color:#ffff00;font-weight:700"></span></span>
+        </div>
+
+        <div class="content">
+            <!-- Hero Section -->
+            <div class="section" style="background-color: #ffffff; padding-top: 40px;">
+                <h2 style="animation: fadeIn 0.6s ease-out forwards;">Entenda o inglês do dia a dia com um método direto
+                    e prático</h2>
+                <p
+                    style="text-align: center; font-weight: 600; padding: 10px; animation: fadeIn 0.6s ease-out forwards; animation-delay: 0.1s;">
+                    🤡 Não caia no golpe das escolas de inglês e não pague por curso, apenas decore essas palavras!</p>
+                <div style="display: flex; justify-content: center; margin: 20px 0;">
+                    <img src="assets/hero.png" alt="Hero" style="width: 100%; height: auto; border-radius: 8px;">
+                </div>
+                <div style="text-align: center;">
+                    <a href="#oferta"
+                        style="background-color: #22c55e; color: #ffffff; font-size: 18px; font-weight: 700; padding: 18px 48px; border-radius: 12px; animation: pulseBtn 2s infinite; display: inline-block; text-decoration: none;">QUERO
+                        APRENDER INGLÊS!</a>
+                </div>
+            </div>
+
+            <!-- Info Section -->
+            <div class="section" style="background-color: #f8f8f8;">
+                <div style="display: flex; justify-content: center;">
+                    <img src="assets/info_text.png" alt="Info" style="width: 110%; height: auto; border-radius: 24px;">
+                </div>
+            </div>
+
+            <!-- Features Section -->
+            <div class="section" style="background-color: #f8f9fa;">
+                <h2 style="font-size: 24px;">📦 O QUE VOCÊ VAI RECEBER</h2>
+                <div style="height: 20px;"></div>
+                <div
+                    style="background-color: #ffffff; padding: 24px; border-radius: 12px; border: 1px solid #e5e7eb; margin-bottom: 20px;">
+                    <h3 style="margin-bottom: 8px; color: #000000;">📱 Acesso ao Aplicativo Fala Gringo</h3>
+                    <p style="font-size: 14px; opacity: 0.8;">Tenha acesso imediato ao app com as 1000 palavras mais
+                        usadas do inglês.</p>
+                </div>
+                <div
+                    style="background-color: #ffffff; padding: 24px; border-radius: 12px; border: 1px solid #e5e7eb; margin-bottom: 20px;">
+                    <h3 style="margin-bottom: 8px; color: #000000;">🎧 Áudio de Todas as Palavras</h3>
+                    <p style="font-size: 14px; opacity: 0.8;">Cada palavra vem com áudio de pronúncia para você ouvir e
+                        repetir.</p>
+                </div>
+                <div
+                    style="background-color: #ffffff; padding: 24px; border-radius: 12px; border: 1px solid #e5e7eb; margin-bottom: 20px;">
+                    <h3 style="margin-bottom: 8px; color: #000000;">🔤 Tradução Simples e Direta</h3>
+                    <p style="font-size: 14px; opacity: 0.8;">Veja a tradução e entenda como a palavra é usada no dia a
+                        dia.</p>
+                </div>
+                <div style="background-color: #ffffff; padding: 24px; border-radius: 12px; border: 1px solid #e5e7eb;">
+                    <h3 style="margin-bottom: 8px; color: #000000;">⚡ Acesso Vitalício</h3>
+                    <p style="font-size: 14px; opacity: 0.8;">O conteúdo é seu para sempre, sem mensalidades.</p>
+                </div>
+                <p style="text-align: center; margin-top: 20px;">E muito mais...</p>
+            </div>
+
+            <!-- Social Proof Section -->
+            <div class="section" style="background-color: #f8f9fa;">
+                <h2 style="font-size: 24px;">Mais de 500 pessoas já aprovaram!</h2>
+                <p style="text-align: center;">⭐⭐⭐⭐⭐ 4,9/5 de satisfação</p>
+                <div class="carousel">
+                    <img src="assets/test1.jpg" alt="Depoimento 1">
+                    <img src="assets/test2.jpg" alt="Depoimento 2">
+                    <img src="assets/test3.jpg" alt="Depoimento 3">
+                    <img src="assets/test4.jpg" alt="Depoimento 4">
+                    <img src="assets/test5.jpg" alt="Depoimento 5">
+                </div>
+            </div>
+
+            <!-- Offer Section -->
+            <div id="oferta" class="section" style="background-color: #f0f9f4;">
+                <div
+                    style="background-color: #ffffff; padding: 32px; border-radius: 16px; border: 3px solid #22c55e; text-align: center;">
+                    <img src="assets/offer.png"
+                        style="width: 100%; max-width: 250px; margin: 0 auto 20px auto; display: block;">
+                    <h3 style="font-size: 24px; font-weight: 700; color: #000000;">COMPRE AGORA</h3>
+                    <p style="font-size: 20px; text-decoration: line-through; opacity: 0.5;">R$ 67,90</p>
+                    <div style="margin: 10px 0;">
+                        <span style="font-size: 48px; font-weight: 800; color: #22c55e;">R$ 19,90</span>
+                    </div>
+                    <ul style="text-align: left; list-style: none; margin: 20px 0; font-size: 15px; color: #000000;">
+                        <li>✅ Guia 1000 Palavras</li>
+                        <li>✅ Audiobook Completo</li>
+                        <li>✅ Acesso Imediato e Vitalício</li>
+                    </ul>
+                    <a href="https://pay.lowify.com.br/checkout?product_id=PdyvLK"
+                        style="display: block; background-color: #22c55e; color: white; padding: 16px; border-radius: 12px; font-weight: 600; text-decoration: none; animation: pulseBtn 2s infinite;">👉
+                        Comprar agora</a>
+                </div>
+                <!-- WhatsApp Card -->
+                <div
+                    style="background-color: #ffffff; padding: 15px; border-radius: 12px; border: 1px solid #22c55e; margin-top: 20px; display: flex; align-items: center; gap: 15px; text-align: left; max-width: 100%;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"
+                        style="width: 40px; height: 40px; flex-shrink: 0;">
+                    <p style="font-size: 14px; font-weight: 500; color: #1a1a1a; margin: 0;">Após a compra, você recebe
+                        acesso ao Material completo diretamente no seu WhatsApp</p>
+                </div>
+            </div>
+
+            <!-- Guarantee Section -->
+            <div class="section" style="background-color: #ffffff;">
+                <div style="text-align: center; max-width: 400px; margin: 0 auto;">
+                    <div
+                        style="width: 80px; height: 80px; background-color: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                            stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            <path d="m9 12 2 2 4-4"></path>
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 24px; font-weight: 700; color: #000000; margin-bottom: 10px;">Garantia de
+                        Satisfação</h3>
+                    <p style="color: #4a4a4a; font-size: 16px; margin-bottom: 20px;">Se você não ficar satisfeito,
+                        devolvemos seu dinheiro.</p>
+                    <div
+                        style="display: flex; justify-content: center; gap: 20px; color: #1a1a1a; font-size: 14px; flex-wrap: wrap;">
+                        <span style="display: flex; align-items: center; gap: 5px;"><span
+                                style="color: #22c55e;">✔</span> Sem burocracia</span>
+                        <span style="display: flex; align-items: center; gap: 5px;"><span
+                                style="color: #22c55e;">✔</span> Reembolso total</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="section" style="background-color: #ffffff;">
+                <h3 style="text-align: center; margin-bottom: 20px; color: #000000;">Perguntas Frequentes</h3>
+
+                <div class="faq-item">
+                    <div class="faq-question">Como vou receber o material?</div>
+                    <div class="faq-answer">Após a confirmação do pagamento, você receberá o material em PDF diretamente
+                        no seu WhatsApp e e-mail.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">São quantas palavras?</div>
+                    <div class="faq-answer">São 1000 palavras em inglês, escolhidas por serem as mais usadas no inglês
+                        do dia a dia, cada uma com tradução e áudio para ouvir e repetir</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Funciona para qualquer pessoa?</div>
+                    <div class="faq-answer">Sim. Funciona para qualquer pessoa, inclusive iniciantes e quem já tentou
+                        aprender inglês antes e não conseguiu.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Quais formas de pagamento são aceitas?</div>
+                    <div class="faq-answer">Aceitamos PIX e cartão de crédito.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Tem garantia?</div>
+                    <div class="faq-answer">Sim! Oferecemos garantia de 7 dias. Se não ficar satisfeito, devolvemos 100%
+                        do seu dinheiro.</div>
+                </div>
+            </div>
+
+            <script>
+                document.querySelectorAll('.faq-question').forEach(item => {
+                    item.addEventListener('click', event => {
+                        const parent = item.parentNode;
+                        parent.classList.toggle('active');
+                    })
+                })
+            </script>
+
+            <!-- Footer -->
+            <!-- Footer -->
+            <div class="section"
+                style="text-align: center; padding-bottom: 40px; border-top: 1px solid #eee; margin-top: 40px; padding-top: 20px;">
+                <p style="font-size: 12px; margin-bottom: 5px;">Contato: contatosuportoficial@gmail.com</p>
+                <p style="font-size: 12px;">Todos os direitos reservados - Fala Gringo</p>
+                <p style="font-size: 10px; opacity: 0.5; margin-top: 10px;">Este site não é afiliado ao Facebook ou a
+                    qualquer entidade do Facebook. Depois que você sair do Facebook, a responsabilidade não é deles e
+                    sim do nosso site. Fazemos todos os esforços para indicar claramente e mostrar todas as provas do
+                    produto e usamos resultados reais.</p>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
